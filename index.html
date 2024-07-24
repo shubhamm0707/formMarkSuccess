@@ -45,8 +45,15 @@ document.cookie = "firstName=abc";
       <textarea id="message" name="message"></textarea><br />
       <!-- No submit button or event handler here -->
     </form>
-    <button onclick="window.location.href='second_page.html'">
-      Go to Second Page
-    </button>
+    <button onclick="goToSecondPage()">Go to Second Page...</button>
   </body>
+
+  <script>
+            function goToSecondPage() {
+            var formInstance = document.getElementById('myForm');
+            window.VWO.push(["nls.formAnalysis.markSuccess", formInstance, 1])   
+            window.location.href = 'second_page.html';
+        }
+    </script>
+  </script>
 </html>
